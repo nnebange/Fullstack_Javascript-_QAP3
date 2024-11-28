@@ -1,0 +1,21 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+   <title>Landing Page</title>  
+   <link rel="stylesheet" href="/styles.css">  
+</head>  
+<body>  
+   <div class="main-content">  
+      <h1>Welcome, <%= user.username %></h1>  
+      <% if (isAdmin) { %>  
+        <h2>Registered Users:</h2>  
+        <ul>  
+           <% users.forEach((user) => { %>  
+              <li><%= user.username %> (<%= user.email %>) - <%= user.role %></li>  
+           <% }); %>  
+        </ul>  
+      <% } %>  
+      <a href="/logout"><button>Logout</button></a>  
+   </div>  
+</body>  
+</html>
